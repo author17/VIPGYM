@@ -13,13 +13,15 @@
         .chat-hidden { transform: translateY(20px); opacity: 0; pointer-events: none; }
         .chat-visible { transform: translateY(0); opacity: 1; pointer-events: all; }
         .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./newfolder2/KYP_6152.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
         .gallery-img { transition: transform 0.3s ease; }
         .gallery-img:hover { transform: scale(1.05); }
+        .feature-card { transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2); }
 
         /* Mobile touch optimization */
         button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
@@ -67,49 +69,36 @@
         </div>
     </section>
 
-    <!-- 6-Image Gallery Section (REAL PHOTOS) -->
+    <!-- 6-Image Gallery Section -->
     <section id="gallery" class="py-16 px-4">
         <div class="max-w-6xl mx-auto">
             <h3 class="text-3xl font-bold text-center mb-4">Inside <span class="vip-gold">VIP GYM</span></h3>
             <p class="text-gray-400 text-center mb-12">State-of-the-art equipment and premium facilities</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                
-                <!-- Photo 1: Exterior -->
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="./newfolder2/KYP_6152.jpg" class="gallery-img w-full h-64 object-cover" alt="VIP Gym Exterior">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Premium Exterior</p></div>
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Gym Equipment">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Modern Equipment</p></div>
                 </div>
-
-                <!-- Photo 2: Interior -->
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="./newfolder2/KYP_6724.jpg" class="gallery-img w-full h-64 object-cover" alt="VIP Gym Interior">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Modern Interior</p></div>
+                    <img src="https://images.unsplash.com/photo-1534258936925-c48947387e3b?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Weight Training">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Weight Training Zone</p></div>
                 </div>
-
-                <!-- Photo 3: Cardio Area -->
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="./newfolder2/reload-fitness-gym-limassol-9.jpg" class="gallery-img w-full h-64 object-cover" alt="Cardio Section">
+                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Cardio Area">
                     <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Cardio Section</p></div>
                 </div>
-
-                <!-- Photo 4: Group Classes -->
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="./newfolder2/1-preview.jpg" class="gallery-img w-full h-64 object-cover" alt="Group Classes">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Group Classes</p></div>
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Training Area">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Functional Fitness</p></div>
                 </div>
-
-                <!-- Photo 5: Supplements & Gear -->
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="./newfolder2/77.jpg" class="gallery-img w-full h-64 object-cover" alt="Supplements">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Supplements & Gear</p></div>
+                    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Gym Interior">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Premium Space</p></div>
                 </div>
-
-                <!-- Photo 6: Weight Training -->
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="./newfolder2/88.jpg" class="gallery-img w-full h-64 object-cover" alt="Weight Training">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Weight Training</p></div>
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Personal Training">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Personal Training</p></div>
                 </div>
-
             </div>
         </div>
     </section>
