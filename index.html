@@ -2,291 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIP GYM Limassol | Transform Your Body</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .vip-gold { color: #D4AF37; }
         .bg-vip-gold { background-color: #D4AF37; }
-        .chat-widget { transition: all 0.3s ease; }
-        .chat-hidden { transform: translateY(20px); opacity: 0; pointer-events: none; }
-        .chat-visible { transform: translateY(0); opacity: 1; pointer-events: all; }
         .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-        }
-        .gallery-img { transition: transform 0.3s ease; }
-        .gallery-img:hover { transform: scale(1.05); }
-        .feature-card { transition: all 0.3s ease; }
-        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2); }
-
-        /* Mobile touch optimization */
-        button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
-
-        @media (max-width: 768px) {
-            .hero-bg { background-attachment: scroll; }
-            #chatWindow { width: 85vw !important; right: -8px !important; max-height: 55vh !important; }
-            #chatMessages { height: 40vh !important; }
         }
     </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-40 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <h1 class="text-3xl font-bold tracking-wider">VIP <span class="vip-gold">GYM</span></h1>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="hover:text-yellow-500 transition">Home</a>
-                    <a href="#gallery" class="hover:text-yellow-500 transition">Gallery</a>
-                    <a href="#videos" class="hover:text-yellow-500 transition">Videos</a>
-                    <a href="#contact" class="hover:text-yellow-500 transition">Contact</a>
-                </div>
-                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-2xl vip-gold"><i class="fas fa-bars"></i></button>
-            </div>
-            <div id="mobileMenu" class="hidden md:hidden pb-4 space-y-3">
-                <a href="#home" onclick="toggleMobileMenu()" class="block hover:text-yellow-500 transition py-2">Home</a>
-                <a href="#gallery" onclick="toggleMobileMenu()" class="block hover:text-yellow-500 transition py-2">Gallery</a>
-                <a href="#videos" onclick="toggleMobileMenu()" class="block hover:text-yellow-500 transition py-2">Videos</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="block hover:text-yellow-500 transition py-2">Contact</a>
+    <nav class="fixed w-full z-40 bg-gray-900 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">VIP <span class="vip-gold">GYM</span></h1>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-yellow-500 transition">Home</a>
+                <a href="#gallery" class="hover:text-yellow-500 transition">Gallery</a>
+                <a href="#contact" class="hover:text-yellow-500 transition">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative">
-        <div class="text-center px-4 max-w-5xl mx-auto">
-            <h2 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 leading-tight">It's not fitness.<br><span class="vip-gold">It's life.</span></h2>
-            <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">Transform your body, elevate your life at Limassol's premier fitness destination</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="bg-vip-gold text-black font-bold py-4 px-10 rounded-full hover:bg-yellow-500 transition text-lg">Join Now</a>
-                <a href="#gallery" class="border-2 border-white text-white font-bold py-4 px-10 rounded-full hover:bg-white hover:text-black transition text-lg">View Gallery</a>
-            </div>
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-center px-4">
+        <div>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">It's not fitness.<br><span class="vip-gold">It's life.</span></h2>
+            <p class="text-xl text-gray-300 mb-8">Transform your body, elevate your life</p>
+            <a href="#contact" class="bg-vip-gold text-black font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition">Join Now</a>
         </div>
     </section>
 
-    <!-- 6-Image Gallery Section -->
+    <!-- Gallery Section -->
     <section id="gallery" class="py-16 px-4">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-bold text-center mb-4">Inside <span class="vip-gold">VIP GYM</span></h3>
-            <p class="text-gray-400 text-center mb-12">State-of-the-art equipment and premium facilities</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <h3 class="text-3xl font-bold text-center mb-12">Inside <span class="vip-gold">VIP GYM</span></h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Gym Equipment">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Modern Equipment</p></div>
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Gym Equipment">
                 </div>
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1534258936925-c48947387e3b?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Weight Training">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Weight Training Zone</p></div>
+                    <img src="https://images.unsplash.com/photo-1534258936925-c48947387e3b?w=600" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Weight Training">
                 </div>
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Cardio Area">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Cardio Section</p></div>
-                </div>
-                <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Training Area">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Functional Fitness</p></div>
-                </div>
-                <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Gym Interior">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Premium Space</p></div>
-                </div>
-                <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=400&fit=crop" class="gallery-img w-full h-64 object-cover" alt="Personal Training">
-                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity"><p class="text-white font-bold">Personal Training</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MANUAL VIDEO CAROUSEL SECTION (No Auto-Play) -->
-    <section id="videos" class="py-16 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4">
-            <h3 class="text-3xl sm:text-4xl font-bold text-center mb-4">Experience <span class="vip-gold">VIP GYM</span></h3>
-            <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">See what makes us different - training, events, and transformations</p>
-            
-            <div class="relative max-w-5xl mx-auto overflow-hidden">
-                <div id="videoCarousel" class="flex transition-transform duration-500 ease-out">
-                    
-                    <!-- Video 1: Instagram Reel (Vertical 9:16) -->
-                    <div class="w-full flex-shrink-0 px-2 flex justify-center">
-                        <div class="relative bg-gray-800 rounded-xl overflow-hidden shadow-2xl w-full max-w-sm aspect-[9/16]">
-                            <iframe src="https://www.instagram.com/reel/DYeK1C3MO3N/embed" class="absolute top-0 left-0 w-full h-full" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Video 2: Instagram Reel (Vertical 9:16) -->
-                    <div class="w-full flex-shrink-0 px-2 flex justify-center">
-                        <div class="relative bg-gray-800 rounded-xl overflow-hidden shadow-2xl w-full max-w-sm aspect-[9/16]">
-                            <iframe src="https://www.instagram.com/reel/DZIqLZ3uBxg/embed" class="absolute top-0 left-0 w-full h-full" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Video 3: Facebook Video (Horizontal 16:9) -->
-                    <div class="w-full flex-shrink-0 px-2 flex justify-center">
-                        <div class="relative bg-gray-800 rounded-xl overflow-hidden shadow-2xl w-full aspect-video">
-                            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fvipgymcy%2Fvideos%2F1004011057867472%2F&show_text=0&width=560" class="absolute top-0 left-0 w-full h-full" frameborder="0" scrolling="no" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Video 4: Coming Soon Placeholder -->
-                    <div class="w-full flex-shrink-0 px-2 flex justify-center">
-                        <div class="relative bg-gray-800 border-2 border-dashed border-gray-600 rounded-xl overflow-hidden shadow-2xl w-full aspect-video flex items-center justify-center text-center p-8">
-                            <div>
-                                <i class="fas fa-video text-4xl vip-gold mb-4"></i>
-                                <h4 class="text-xl font-bold mb-2">Gym Tour Video</h4>
-                                <p class="text-gray-400">Coming soon - check back for the full walkthrough</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation Arrows -->
-                <button onclick="moveCarousel(-1)" class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 sm:-translate-x-12 bg-vip-gold text-black w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-yellow-500 transition z-10">
-                    <i class="fas fa-chevron-left text-xl"></i>
-                </button>
-                <button onclick="moveCarousel(1)" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 sm:translate-x-12 bg-vip-gold text-black w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-yellow-500 transition z-10">
-                    <i class="fas fa-chevron-right text-xl"></i>
-                </button>
-
-                <!-- Dots Navigation -->
-                <div class="flex justify-center mt-8 space-x-3">
-                    <button onclick="goToSlide(0)" class="carousel-dot w-3 h-3 rounded-full bg-vip-gold transition"></button>
-                    <button onclick="goToSlide(1)" class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition"></button>
-                    <button onclick="goToSlide(2)" class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition"></button>
-                    <button onclick="goToSlide(3)" class="carousel-dot w-3 h-3 rounded-full bg-gray-600 transition"></button>
+                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Cardio Area">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-800">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h3 class="text-3xl sm:text-4xl font-bold mb-8">Visit <span class="vip-gold">VIP GYM</span></h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                <div class="bg-gray-900 p-6 rounded-lg">
-                    <i class="fas fa-map-marker-alt text-4xl vip-gold mb-4"></i>
-                    <p class="font-bold mb-2">Address</p>
-                    <p class="text-gray-400">Steliou Kyriakide 31A<br>3080, Limassol, Cyprus</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg">
-                    <i class="fas fa-phone text-4xl vip-gold mb-4"></i>
-                    <p class="font-bold mb-2">Phone</p>
-                    <p class="text-gray-400">77 776525</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg">
-                    <i class="fas fa-envelope text-4xl vip-gold mb-4"></i>
-                    <p class="font-bold mb-2">Email</p>
-                    <p class="text-gray-400">vipgym.livelonger@gmail.com</p>
-                </div>
-            </div>
-            <a href="tel:77776525" class="inline-block bg-vip-gold text-black font-bold py-4 px-12 rounded-full hover:bg-yellow-500 transition text-lg"><i class="fas fa-phone mr-2"></i>Call Now</a>
+    <section id="contact" class="py-16 bg-gray-800 text-center px-4">
+        <h3 class="text-3xl font-bold mb-8">Visit <span class="vip-gold">VIP GYM</span></h3>
+        <div class="max-w-2xl mx-auto space-y-4 text-lg">
+            <p class="mb-4"><i class="fas fa-map-marker-alt vip-gold mr-2"></i>Steliou Kyriakide 31A, 3080, Limassol, Cyprus</p>
+            <p class="mb-4"><i class="fas fa-phone vip-gold mr-2"></i>77 776525</p>
+            <p class="mb-8"><i class="fas fa-envelope vip-gold mr-2"></i>vipgym.livelonger@gmail.com</p>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-800 py-8 text-center">
-        <p class="text-gray-400">&copy; 2024 VIP GYM Limassol. All rights reserved. | <span class="vip-gold">Transform Your Body, Elevate Your Life</span></p>
-    </footer>
-
-    <!-- AI Chatbot -->
-    <div class="fixed bottom-6 right-4 sm:right-6" style="z-index: 9999;">
-        <div id="chatWindow" class="chat-hidden chat-widget absolute bottom-16 right-0 w-80 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl overflow-hidden">
+    <!-- Chatbot -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleChat()" class="bg-vip-gold text-black w-14 h-14 rounded-full shadow-lg text-2xl hover:bg-yellow-500 transition">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+        
+        <div id="chatWindow" class="hidden absolute bottom-16 right-0 w-72 bg-gray-800 rounded-lg shadow-2xl border border-gray-700">
             <div class="bg-vip-gold text-black p-3 font-bold flex justify-between items-center">
-                <span><i class="fas fa-robot mr-2"></i>VIP Gym AI</span>
-                <button onclick="toggleChat()" class="text-black hover:text-gray-800 active:scale-95"><i class="fas fa-times"></i></button>
+                <span>VIP Gym AI</span>
+                <button onclick="toggleChat()" class="text-black hover:text-gray-800"><i class="fas fa-times"></i></button>
             </div>
-            <div id="chatMessages" class="h-64 overflow-y-auto p-4 space-y-3 text-sm">
-                <div class="bg-gray-700 p-3 rounded-lg rounded-tl-none max-w-[85%]">Hello! 👋 Ask me about hours, location, or membership!</div>
+            <div id="chatMessages" class="h-48 p-4 overflow-y-auto text-sm space-y-2">
+                <div class="bg-gray-700 p-2 rounded">Hello! Ask me about hours, location, or membership!</div>
             </div>
             <div class="p-3 border-t border-gray-700 flex">
-                <input type="text" id="chatInput" placeholder="Type a question..." class="flex-1 bg-gray-900 text-white px-3 py-2 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-yellow-500 text-sm" onkeypress="handleKeyPress(event)">
-                <button onclick="sendMessage()" class="bg-vip-gold text-black px-4 py-2 rounded-r-lg font-bold hover:bg-yellow-500 text-sm active:scale-95"><i class="fas fa-paper-plane"></i></button>
+                <input type="text" id="chatInput" placeholder="Type a message..." class="flex-1 bg-gray-900 px-2 py-1 rounded-l focus:outline-none" onkeypress="if(event.key==='Enter')sendMessage()">
+                <button onclick="sendMessage()" class="bg-vip-gold text-black px-3 py-1 rounded-r font-bold hover:bg-yellow-500 transition">Send</button>
             </div>
         </div>
-        <button onclick="toggleChat()" class="bg-vip-gold text-black w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-yellow-500 transition active:scale-95"><i class="fas fa-comment-dots"></i></button>
     </div>
 
-    <!-- ALL SCRIPTS -->
+    <!-- Scripts -->
     <script>
-        // Mobile Menu
-        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
-
-        // Chatbot
         function toggleChat() {
-            const chatWindow = document.getElementById('chatWindow');
-            chatWindow.classList.toggle('chat-hidden');
-            chatWindow.classList.toggle('chat-visible');
-            if (chatWindow.classList.contains('chat-visible')) setTimeout(() => document.getElementById('chatInput').focus(), 300);
+            const chat = document.getElementById('chatWindow');
+            chat.classList.toggle('hidden');
         }
-        function handleKeyPress(event) { if (event.key === 'Enter') sendMessage(); }
+
         function sendMessage() {
             const input = document.getElementById('chatInput');
-            const message = input.value.trim();
-            if (!message) return;
-            addMessage(message, 'user');
+            const msg = input.value.trim().toLowerCase();
+            const messages = document.getElementById('chatMessages');
+            
+            if (!msg) return;
+            
+            // Add user message
+            messages.innerHTML += '<div class="bg-yellow-600 text-white p-2 rounded text-right">' + input.value + '</div>';
             input.value = '';
-            setTimeout(() => addMessage(getAIResponse(message.toLowerCase()), 'bot'), 800);
+            
+            // Add bot response
+            setTimeout(() => {
+                let reply = "Call us at 77 776525 for more info!";
+                if (msg.includes('hour') || msg.includes('open')) reply = "Open Mon-Fri 7AM-10PM, Weekends 8AM-8PM";
+                else if (msg.includes('location') || msg.includes('where')) reply = "Steliou Kyriakide 31A, Limassol";
+                else if (msg.includes('price') || msg.includes('membership')) reply = "Call 77 776525 for pricing!";
+                else if (msg.includes('hi') || msg.includes('hello')) reply = "Hey! Ready to transform? 💪";
+                
+                messages.innerHTML += '<div class="bg-gray-700 p-2 rounded">' + reply + '</div>';
+                messages.scrollTop = messages.scrollHeight;
+            }, 500);
         }
-        function addMessage(text, sender) {
-            const chatMessages = document.getElementById('chatMessages');
-            const div = document.createElement('div');
-            div.className = sender === 'user' ? 'bg-yellow-600 text-white p-3 rounded-lg rounded-tr-none max-w-[85%] ml-auto' : 'bg-gray-700 p-3 rounded-lg rounded-tl-none max-w-[85%]';
-            div.textContent = text;
-            chatMessages.appendChild(div);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-        function getAIResponse(msg) {
-            if (msg.includes('hour') || msg.includes('open') || msg.includes('time') || msg.includes('close')) return "We are typically open Monday-Friday 7:00 AM - 10:00 PM, and weekends 8:00 AM - 8:00 PM. Call 77 776525!";
-            if (msg.includes('location') || msg.includes('where') || msg.includes('address')) return "We are located at Steliou Kyriakide 31A, 3080, Limassol, Cyprus. 📍";
-            if (msg.includes('price') || msg.includes('membership') || msg.includes('cost')) return "We offer flexible passes. Call us at 77 776525 for the best rates!";
-            if (msg.includes('hello') || msg.includes('hi')) return "Hey there! Ready to transform your body? 💪";
-            return "Great question! Call us at 77 776525 or email vipgym.livelonger@gmail.com.";
-        }
-
-        // Video Carousel (MANUAL ONLY - No Auto-Play)
-        let currentSlide = 0;
-        const totalSlides = 4;
-
-        function moveCarousel(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-        function goToSlide(index) {
-            currentSlide = index;
-            updateCarousel();
-        }
-        function updateCarousel() {
-            document.getElementById('videoCarousel').style.transform = `translateX(-${currentSlide * 100}%)`;
-            const dots = document.querySelectorAll('.carousel-dot');
-            dots.forEach((dot, index) => {
-                dot.className = `carousel-dot w-3 h-3 rounded-full transition ${index === currentSlide ? 'bg-vip-gold' : 'bg-gray-600'}`;
-            });
-        }
-
-        // Touch/swipe support for mobile manual scrolling
-        let touchStartX = 0;
-        let touchEndX = 0;
-        document.getElementById('videoCarousel').addEventListener('touchstart', (e) => touchStartX = e.changedTouches[0].screenX);
-        document.getElementById('videoCarousel').addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            if (touchEndX < touchStartX - 50) moveCarousel(1);
-            if (touchEndX > touchStartX + 50) moveCarousel(-1);
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
     </script>
 </body>
 </html>
